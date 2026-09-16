@@ -718,6 +718,13 @@
         display: none;
       }
 
+      .email-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
       .platform {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1174,7 +1181,11 @@
                   added only after UniSafeX approval.
                 </p>
               </div>
-              <form class="partner-form" data-partner-form>
+              <form class="partner-form" action="https://formsubmit.co/abhishek.work962511@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New UniSafeX partnership request" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://abhi-techie22.github.io/#partners" />
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
                 <div class="form-grid">
                   <label class="field">
                     Organization name
@@ -1186,7 +1197,7 @@
                   </label>
                   <label class="field">
                     Email or phone
-                    <input name="contactDetail" autocomplete="email" required />
+                    <input name="email" autocomplete="email" required />
                   </label>
                   <label class="field">
                     Partnership type
@@ -1218,7 +1229,7 @@
                   <span>I understand this is a partnership interest request and official listing requires UniSafeX review and approval.</span>
                 </label>
                 <button class="partner-submit" type="submit">Submit Interest</button>
-                <p class="form-status" data-form-status hidden></p>
+                <p class="email-note">Submissions are emailed to the UniSafeX team. The first submission may ask the receiving email to confirm FormSubmit once.</p>
               </form>
             </article>
           </div>
@@ -1276,20 +1287,5 @@
         <span>Tourism safety, maps, reviews, guides, and booking flows.</span>
       </footer>
     </div>
-    <script>
-      const partnerForm = document.querySelector("[data-partner-form]");
-      const partnerStatus = document.querySelector("[data-form-status]");
-
-      if (partnerForm && partnerStatus) {
-        partnerForm.addEventListener("submit", (event) => {
-          event.preventDefault();
-          const formData = new FormData(partnerForm);
-          const organization = String(formData.get("organization") || "your organization").trim();
-          partnerStatus.textContent = `Thank you, ${organization}. Your partnership interest is ready for UniSafeX review.`;
-          partnerStatus.hidden = false;
-          partnerForm.reset();
-        });
-      }
-    </script>
   </body>
 </html>
