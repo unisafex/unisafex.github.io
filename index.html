@@ -797,6 +797,66 @@
         border-top: 1px solid var(--line);
       }
 
+      .policy-directory {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .policy-link {
+        min-width: 0;
+        padding: 18px 16px;
+        border-right: 1px solid var(--line);
+      }
+
+      .policy-link:last-child {
+        border-right: 0;
+      }
+
+      .policy-link:nth-child(3n) {
+        border-right: 0;
+      }
+
+      .policy-link:nth-child(n + 4) {
+        border-top: 1px solid var(--line);
+      }
+
+      .policy-link strong,
+      .policy-link span {
+        display: block;
+      }
+
+      .policy-link strong {
+        color: var(--primary-dark);
+      }
+
+      .policy-link span {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .policy-link:hover {
+        background: var(--soft);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px 18px;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .footer-links a:hover,
+      .check-row a:hover {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+
       @media (max-width: 860px) {
         .nav {
           position: absolute;
@@ -823,8 +883,19 @@
         }
 
         .partner-form-card,
-        .form-grid {
+        .form-grid,
+        .policy-directory {
           grid-template-columns: 1fr;
+        }
+
+        .policy-link {
+          border-right: 0;
+          border-top: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .policy-link:last-child {
+          border-bottom: 0;
         }
 
         .quick-strip {
@@ -843,6 +914,10 @@
 
         footer {
           flex-direction: column;
+        }
+
+        .footer-links {
+          justify-content: flex-start;
         }
       }
 
@@ -887,6 +962,7 @@
           <a href="#experience">Experience</a>
           <a href="#partners">Partners</a>
           <a href="#platforms">Platforms</a>
+          <a href="#trust">Policies</a>
         </nav>
         <a class="nav-cta" href="#partners">Partner With Us</a>
       </header>
@@ -1225,8 +1301,8 @@
                   </label>
                 </div>
                 <label class="check-row">
-                  <input type="checkbox" required />
-                  <span>I understand this is a partnership interest request and official listing requires UniSafeX review and approval.</span>
+                  <input type="checkbox" name="privacy_acknowledged" value="yes" required />
+                  <span>I understand this is a partnership interest request, official listing requires review, and my submission is handled under the <a href="./privacy.html">Privacy Policy</a>.</span>
                 </label>
                 <button class="partner-submit" type="submit">Submit Interest</button>
                 <p class="email-note">Submissions are emailed to the UniSafeX team. The first submission may ask the receiving email to confirm FormSubmit once.</p>
@@ -1271,6 +1347,47 @@
           </div>
         </section>
 
+        <section id="trust">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Trust & Policies</p>
+              <h2>Clear rules before real bookings begin.</h2>
+            </div>
+            <p class="lead">
+              UniSafeX is currently a pilot. These policies explain data use,
+              community moderation, external partner bookings, cancellation,
+              refunds, support, and the current ONDC demo boundary.
+            </p>
+          </div>
+
+          <div class="policy-directory" aria-label="UniSafeX policy pages">
+            <a class="policy-link" href="./privacy.html">
+              <strong>Privacy</strong>
+              <span>Data, location, permissions, sharing, and user rights.</span>
+            </a>
+            <a class="policy-link" href="./terms.html">
+              <strong>Terms</strong>
+              <span>Service rules, safety, partners, AI, and ONDC demos.</span>
+            </a>
+            <a class="policy-link" href="./cancellation-refund.html">
+              <strong>Cancellation & Refund</strong>
+              <span>Partner orders, demos, payments, and dispute steps.</span>
+            </a>
+            <a class="policy-link" href="./community-guidelines.html">
+              <strong>Community</strong>
+              <span>Reviews, replies, photos, moderation, and appeals.</span>
+            </a>
+            <a class="policy-link" href="./support.html">
+              <strong>Support & Grievance</strong>
+              <span>Contact channels, response targets, and escalation.</span>
+            </a>
+            <a class="policy-link" href="./account-deletion.html">
+              <strong>Account & Data Deletion</strong>
+              <span>Request steps, verification, deletion, and retention.</span>
+            </a>
+          </div>
+        </section>
+
         <section class="cta" aria-label="Project summary">
           <p class="kicker">UniSafeX V1</p>
           <h2>A polished travel safety companion for tourists exploring India.</h2>
@@ -1283,8 +1400,15 @@
       </main>
 
       <footer>
-        <span>UniSafeX</span>
-        <span>Tourism safety, maps, reviews, guides, and booking flows.</span>
+        <span>UniSafeX | Tourism safety and travel tools.</span>
+        <nav class="footer-links" aria-label="Legal and support links">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./cancellation-refund.html">Cancellation & Refund</a>
+          <a href="./community-guidelines.html">Community</a>
+          <a href="./support.html">Support</a>
+          <a href="./account-deletion.html">Delete Account</a>
+        </nav>
       </footer>
     </div>
   </body>
